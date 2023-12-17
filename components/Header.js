@@ -18,7 +18,7 @@ const Header = () => {
         <a
           href="#"
           className={`${styles.btn} ${styles.btn_white} ${styles.btn_animated}`}>
-          Thapa Technical
+          Bablu Bambal
         </a>
       </div>
     </header>
