@@ -1,0 +1,37 @@
+// Your JavaScript object with URLs
+const urlObject = {
+    url1: 'https://api.escuelajs.co/api/v1/products/1',
+    url2: 'https://api.escuelajs.co/api/v1/products/2',
+    url3: 'https://api.escuelajs.co/api/v1/products/1',
+    url4: 'https://api.escuelajs.co/api/v1/products/2',
+    // Add more URLs as needed
+  };
+  
+  // Function to fetch data from a URL
+  const fetchData = async (url) => {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  };
+  
+  // Function to loop through the object and fetch data
+  const fetchAllData = async () => {
+    const responseArray = [];
+  
+    for (const key in urlObject) {
+      if (urlObject.hasOwnProperty(key)) {
+        const url = urlObject[key];
+        const data = await fetchData(url);
+        responseArray.push(data);
+      }
+    }
+  
+    return responseArray;
+  };
+  
+  // Example usage
+  fetchAllData().then((responses) => {
+    console.log(responses);
+    // Do something with the responses array
+  });
+  
